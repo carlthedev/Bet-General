@@ -1,5 +1,9 @@
 *{
   box-sizing: border-box;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
 }
 
 body{
@@ -12,19 +16,12 @@ body{
   overflow-x:hidden;
 }
 
-.v-header{
+/* background video css, start */
+
+.v-header-container {
   height:100vh;
   display:flex;
-  align-items:center;
   color:#fff;
-}
-
-.container{
-  max-width:960px;
-  padding-left:1rem;
-  padding-right:1rem;
-  margin:auto;
-  text-align:center;
 }
 
 .fullscreen-video-wrap{
@@ -52,14 +49,115 @@ body{
   opacity:0.8;
 }
 
-.header-content{
+/*.header-content{
   z-index:2;
+}*/
+
+/* background video css, finish */
+
+/* nav bar css, start */
+
+nav {
+  z-index:2;
+  box-sizing: border-box;
+  list-style: none;
+  background: none;
+  height: 80px;
+  width: 100%;
 }
 
-.header-content h1{
-
+label.logo {
+  color: white;
+  font-size: 35px;
+  line-height: 80px;
+  padding: 0 100px;
+  font-weight: bold;
 }
 
+nav ul {
+  float: right;
+  margin-right: 20px;
+}
 
+nav ul li {
+display: inline-block;
+line-height: 80px;
+margin: 0 5px;
+}
 
+nav ul li a {
+  color: white;
+  padding: 7px 13px;
+  border-radius: 3px;
+  font-size: 17px;
+  text-transform: uppercase;
+}
 
+a.active, a:hover {
+  background: yellowgreen;
+  transition: 0.3s;
+}
+
+.checkbtn {
+  font-size: 30px;
+  color: white;
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+
+#check {
+  display: none;
+}
+
+@media (max-width: 952px) {
+  label.logo{
+    font-size: 30px;
+    padding-left: 50px;
+  }
+  nav ul li a {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 858px) {
+  .checkbtn {
+    display: block;
+  }
+  ul {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: none;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all 0.5s;
+  }
+  nav ul li {
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+  nav ul li a {
+    font-size: 20px;
+  }
+  a:hover,a.active {
+    background: none;
+    color: #0082e6;
+  }
+  #check:checked ~ ul{
+    left: 0;
+  }
+}
+
+/*
+section {
+  background: src="nfl.mp4" no-repeat;
+  background-size: cover;
+  height: calc(100vh - 80px);
+}
+*/
+/* nav bar css, finish */
